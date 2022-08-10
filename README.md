@@ -1,0 +1,2 @@
+# kube
+kubectl config
