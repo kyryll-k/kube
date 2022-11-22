@@ -5,8 +5,6 @@ metadata:
   name: db
   labels:
     name: postgres-service
-    type: service
-    tier: network
     app: demo-voting-app
 spec:
   ports:
@@ -14,6 +12,4 @@ spec:
     targetPort: 5432
   selector:
     name: postgres-pod
-    type: db
-    tier: backend
     app: demo-voting-app

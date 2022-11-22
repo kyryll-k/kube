@@ -5,8 +5,6 @@ metadata:
   name: redis
   labels:
     name: redis-service
-    type: service
-    tier: network
     app: demo-voting-app
 spec:
   ports:
@@ -14,6 +12,4 @@ spec:
     targetPort: 6379
   selector:
     name: redis-pod
-    type: db
-    tier: backend
     app: demo-voting-app
