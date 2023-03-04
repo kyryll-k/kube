@@ -1,7 +1,7 @@
-apiVersion: v1
-kind: ReplictationController
+apiVersion: apps/v1
+kind: ReplicaSet
 metadata:
-  name: myapp-rc
+  name: myapp-rs
   labels:
     name: myapp
     type: front-end
@@ -19,5 +19,8 @@ spec:
         env:
         - name: USER_PASSWORD
           value: somesecretpassword
-
   replicas: 3
+  selector:
+    matchLabels:
+      tier: front-end     # it related to labels in template-metadata
+    
