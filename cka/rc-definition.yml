@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ReplictationController
+metadata:
+  name: myapp-rc
+  labels:
+    name: myapp
+    type: front-end
+spec:
+  template:
+    
+  replicas: 3

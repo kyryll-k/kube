@@ -9,3 +9,6 @@ spec:
   containers:
   - name: nginx-web
     image: nginx
+    env:
+    - name: USER_PASSWORD
+      value: somesecretpassword
