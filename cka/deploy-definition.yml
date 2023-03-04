@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deploy
+  labels:
+    app: myapp-k8s
+    tier: front
+spec:
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp-k8s
+        tier: front
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: front
