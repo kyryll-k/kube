@@ -9,6 +9,5 @@ spec:
     port: 80
     nodePort: 30008
   selector:		# in this case, we set lables of diserable pod-s
-    matchLabels:
-      app: web-app
-      tier: front-end
+    app: web-app
+    tier: front-end
