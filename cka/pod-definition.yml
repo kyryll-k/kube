@@ -17,3 +17,5 @@ spec:
     operator: "Equal"
     value: "blue"
     effect: "NoSchedule"
+  nodeSelector:
+    size: Small
