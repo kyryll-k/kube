@@ -19,3 +19,12 @@ spec:
     effect: "NoSchedule"
   nodeSelector:
     size: Small
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: disktype
+            operator: In
+            values:
+            - ssd            
