@@ -12,3 +12,8 @@ spec:
     env:
     - name: USER_PASSWORD
       value: somesecretpassword
+  tolerations:
+  - key: "app"
+    operator: "Equal"
+    value: "blue"
+    effect: "NoSchedule"
