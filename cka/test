@@ -1,5 +1,0 @@
-spec.containers[*].image
-spec.initContainers[*].image
-spec.activeDeadlineSeconds
-spec.tolerations
-`:
