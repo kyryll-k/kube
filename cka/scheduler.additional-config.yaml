@@ -2,3 +2,7 @@ apiVersion: kubescheduler.config.k8s.io/v1
 kind: KubeSchedulerConfiguration
 profiles:
 - schedulerName: scheduler-additional
+leaderElection:
+  leaderElect: true
+  resourceNamespace: kube-system
+  resourceName: lock-object-my-scheduler
