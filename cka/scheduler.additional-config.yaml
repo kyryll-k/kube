@@ -2,6 +2,21 @@ apiVersion: kubescheduler.config.k8s.io/v1
 kind: KubeSchedulerConfiguration
 profiles:
 - schedulerName: scheduler-additional
+  plugins:
+    score:
+      disabled:
+      - name: TaintToleration
+      enabled:
+      - name: MyCustomPluginA
+      - name: MyCustomPluginB
+- schedulerName: scheduler-3
+  plugins:
+    preScore:
+      disabled:
+      - name: '*'
+    score:
+      disabled:
+      - name: '*'
 leaderElection:
   leaderElect: true
   resourceNamespace: kube-system
