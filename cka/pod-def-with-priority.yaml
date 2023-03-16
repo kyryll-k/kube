@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  labels:
+    app: web-app
+    tier: front-end
+spec:
+  priorityClassName: high-priority
+  containers:
+  - name: nginx-web
+    image: nginx
+    env:
+    - name: USER_PASSWORD
+      value: somesecretpassword
+  resources:
+    requests:
+      memory: "1Gi"
+      cpu: 6
+  schedulerName: my-custom-scheduler
