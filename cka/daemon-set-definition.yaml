@@ -4,7 +4,7 @@ metadata:
   name:  monitoring-daemon
 spec:
   selector:
-    matchLavels:
+    matchLabels:
       app: monitoring-agent
   template:
     metadata:

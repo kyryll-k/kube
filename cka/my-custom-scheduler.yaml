@@ -5,7 +5,7 @@ metadata:
   namespace: kube-system
 spec:
   containers:
-  - commands:
+  - command:
     - kube-scheduler
     - --address=127.0.0.1
     - --kubeconfig=/etc/kubernetes/scheduler.conf

@@ -13,8 +13,8 @@ spec:
     env:
     - name: USER_PASSWORD
       value: somesecretpassword
-  resources:
-    requests:
-      memory: "1Gi"
-      cpu: 6
+    resources:
+      requests:
+        memory: "1Gi"
+        cpu: 6
   schedulerName: my-custom-scheduler
