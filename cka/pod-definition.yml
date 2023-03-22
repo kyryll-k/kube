@@ -12,8 +12,13 @@ spec:
     command: ["tree"]
     args: ["-L", "2"]
     env:
+    - name: APP_COLOR
+      value: pink
     - name: USER_PASSWORD
       value: somesecretpassword
+    envFrom:
+    - configMapRef:
+        name: app-config 
   resources:
     requests:
       memory: "1Gi"
