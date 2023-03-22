@@ -16,9 +16,20 @@ spec:
       value: pink
     - name: USER_PASSWORD
       value: somesecretpassword
+    - name: DB_Password
+        valueFrom:
+          secretKeyRef:
+            name: app-secret
+            key: DB_Password
     envFrom:
     - configMapRef:
         name: app-config 
+    - secretRef:
+        name: app-secret
+  volumes:
+  - name: app-secret-volume
+    secret:
+      secretName: app-secret
   resources:
     requests:
       memory: "1Gi"
