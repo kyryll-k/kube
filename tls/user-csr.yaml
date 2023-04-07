@@ -1,4 +1,4 @@
-apiVersion: certificates.k8s.io/v1beta1
+apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
   name: user-name
@@ -10,4 +10,4 @@ spec:
   - key encipherment
   - server auth
   request:
-    "cat user.csr | base64 | tr -d "\n"
+    "cat user.csr | base64 -w 0"

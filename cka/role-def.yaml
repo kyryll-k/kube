@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: developers
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get","create","update"]
+  resourceNames: ["$pod_name1","$pod_name3"]
+- apiGroups: [""]
+  resources: ["ConfigMap"]
+  verbs: ["get","list","create"]
+  
