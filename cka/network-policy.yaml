@@ -8,11 +8,24 @@ spec:
       role: db
   policyTypes:                  # set allowed net.traffic 
   - Ingress
+  - Egress			# can be usefull when have external requests
   ingress:
   - from:
     - podSelector:
         matchLabels:
           name: api-pod
+      namespaceSelector:
+        matchLabels:
+          name: prod		# name of needed namespace 
+    - ipBlock:
+        cidr: 192.168.5.10/32	# create possibilities to allow access from outside the cluster 
     ports:
     - protocol: TCP
       port: 3306
+  egress:
+  - to:
+    - ipBlock:
+        cidr: 192.168.5.10/32
+    ports:
+    - protocol: TCP
+      port: 80
