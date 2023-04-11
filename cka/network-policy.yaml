@@ -29,3 +29,8 @@ spec:
     ports:
     - protocol: TCP
       port: 80
+  - ports:                      # definetily reccomended for name resolution ability
+    - port: 53
+      protocol: UDP
+    - port: 53
+      protocol: TCP
