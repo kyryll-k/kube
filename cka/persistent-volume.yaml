@@ -7,6 +7,6 @@ spec:
   - ReadWriteOnce	# Can be :	ReadWriteOnce	ReadWriteMany	ReadOnlyMany
   capacity:
     storage: 1Gi
-  awsElasticBlockStore:
-    volumeID: ebs-eu3-point2	# example vol.id
-    fsType: ext4
+  hostPath:			# or can be awsElasticBlockStore:
+    path: /tmp/data		# or volumeID: ebs-eu3-point2	 example vol.id
+    				# fsType: ext4 
