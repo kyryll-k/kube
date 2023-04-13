@@ -1,0 +1,24 @@
+apiVersion:
+kind:
+metadata:
+  rendom-pod
+spec:
+  containers:
+  - image: alpine
+    name: alpine
+    command: ["/bin/sh","-c"]
+    args: [shuf -i 0-100 -n 1 >> /opt/number.out;"]
+    volumeMounts:
+    - mountPath: /opt		# directory  in container
+      name: data-volume		# name of used volume
+    - mountPath: /srv		# directory  in container
+      name: network-volume	# name of used network-volume
+  volumes:
+  - name: data-volume	# name of volume for using in definition(container)
+    hostPath:
+      path: /data	# directory in host-system 
+      type: Directory
+  - name: network-volume	# name of volume for using in definition(container)
+    awsElsticBlockStore:
+      volumeID: ebs-eu2-point1-point
+      fsType: ext4
