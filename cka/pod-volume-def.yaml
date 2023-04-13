@@ -22,3 +22,6 @@ spec:
     awsElsticBlockStore:
       volumeID: ebs-eu2-point1-point
       fsType: ext4
+  - name: mypersistent-volume-claim	# myclaim need to be created previously 
+      persistentVolumeClaim:
+        claimName: myclaim
