@@ -5,7 +5,7 @@ metadata:
 spec:
   accessModes:
   - ReadWriteOnce	
-  
+  storageClassName: sc_name_priviously_cleated 		# can be used for Dynamic Persistent Volume Provisioning 
   resources:
-    capacity:
-      storage: 500Mi
+    requests:
+      storage: 8Gi  

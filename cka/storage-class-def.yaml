@@ -1,0 +1,35 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: google-silver		# google has been choose as example
+
+provisioner: kubernetes.io/gce-pd
+
+parameters:			# can be very different depends of provider
+  type: pd-standard 
+  replication-type: none
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: google-gold		# google has been choose as example
+
+provisioner: kubernetes.io/gce-pd
+
+parameters:			# can be very different depends of provider
+  type: pd-ssd 
+  replication-type: none
+
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: google-platinum		# google has been choose as example
+
+provisioner: kubernetes.io/gce-pd
+
+parameters:			# can be very different depends of provider
+  type: pd-ssd 
+  replication-type: regional-pd
