@@ -11,3 +11,15 @@ ip -n <namespace> route add ...
 
 # Bring Up Interface 
 ip -n <namespace> link set  ...
+
+# Optionally
+ADD)
+# Create veth pair
+# Attach veth pair
+# Assign IP Address
+# Bring Up Interface 
+ip -n <namespace> link set  ...
+
+DEL)
+# Delete veth pair
+ip link del ...
