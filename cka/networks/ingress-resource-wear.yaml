@@ -1,0 +1,7 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata: ingress-wear
+spec:
+  backend:
+    serviceName: wear-service
+    servicePort: 80
