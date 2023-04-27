@@ -3,15 +3,14 @@ kind: Service
 metadata:
   name: nginx-ingress-service
 spec:
-- type: NodePort
-  port: 80
-  targetPort: 80
-  protocol: TCP
-  name: http
-- type: NodePort
-  port: 443
-  targetPort: 443
-  protocol: TCP
-  name: https
-selector:
-  name: nginx-ingress
+  selector:
+    name: nginx-ingress
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+    - port: 443
+      targetPort: 443
+      protocol: TCP
+      name: https

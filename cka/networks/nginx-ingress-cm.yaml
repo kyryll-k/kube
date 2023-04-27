@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: nginx-ingress-config
 data:
-  err-log-path=/var/log/nginx/log.log
+  ERR_LOG_PATH="/var/log/nginx/log.log"
   keep-alive=180
   ssl-protocols=true
