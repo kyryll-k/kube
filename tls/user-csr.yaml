@@ -10,4 +10,4 @@ spec:
   - key encipherment
   - server auth
   request:
-    "cat user.csr | base64 -w 0"
+    `cat user.csr | base64 | tr -d "\n"`
